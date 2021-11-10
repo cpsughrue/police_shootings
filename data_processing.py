@@ -21,6 +21,7 @@ def get_data():
     file.close()
     os.remove(dirty)
 
+
 def edit_features():
     '''
     function for all feature engineering prior to being loaded into a relational database
@@ -73,6 +74,7 @@ def load_db():
     conn.commit()
     conn.close()
 
+
 def view_schema():
     '''
     prints out database schema
@@ -88,5 +90,5 @@ def view_schema():
         print(table)
         print(pd.read_sql(sql, conn))
         print('\n')
-        
+
     conn.close()
