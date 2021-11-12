@@ -31,7 +31,7 @@ def edit_features(path = "data.csv"):
     data.to_csv(path)
 
 
-def load_db(path = 'data.csv', database = "shooting.db"):
+def load_shooting_db(path = 'data.csv', database = "shooting.db"):
     '''
     loads data in csv file into a relational database for easy querying
     '''
@@ -69,12 +69,12 @@ def load_db(path = 'data.csv', database = "shooting.db"):
     insert_row = "INSERT INTO tShooting VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);"
     for row in data.values:
         curs.execute(insert_row, tuple(row))
-        
+
     conn.commit()
     conn.close()
 
 
-def view_schema(database = "shooting.db"):
+def view_shooting_db_schema(database = "shooting.db"):
     '''
     prints out database schema
     '''
@@ -89,6 +89,7 @@ def view_schema(database = "shooting.db"):
         print(table)
         print(pd.read_sql(sql, conn))
         print('\n')
+
     conn.close()
 
 
@@ -97,9 +98,9 @@ def view_tShooting(database = "shooting.db"):
     prints first five rows of tShooting to help confirm everything was loaded correctly
     '''
     conn = sqlite3.connect(database)
-    x = pd.read_sql(""" SELECT * 
-                        FROM tShooting;""", conn)
+    x = pd.read_sql(""" SELECT * FROM tShooting;""", conn)
     print(x.head())
+    conn.close()
 
 
 def main():
@@ -109,8 +110,8 @@ def main():
 
     get_shooting_data(path)
     edit_features(path)
-    load_db(path, database)
-    view_schema(database)
+    load_shooting_db(path, database)
+    view_shooting_db_schema(database)
     view_tShooting(database)
 
 
