@@ -3,7 +3,7 @@ import sqlite3
 import os
 import re
 
-def get_shooting_data(path = "data.csv"):
+def get_shooting_data(path = "./data/shooting.csv"):
     '''
     produces csv file "data.csv" with latest version of washington post database
     '''
@@ -22,7 +22,7 @@ def get_shooting_data(path = "data.csv"):
     os.remove(dirty)
 
 
-def edit_features(path = "data.csv"):
+def edit_features(path = "./data/shooting.csv"):
     '''
     function for all feature engineering prior to being loaded into a relational database
     '''
@@ -31,18 +31,17 @@ def edit_features(path = "data.csv"):
     data.to_csv(path)
 
 
-def load_shooting_db(path = 'data.csv', database = "shooting.db"):
+def load_shooting_db(path = "./data/shooting.csv", database = "./data/shooting.db"):
     '''
     loads data in csv file into a relational database for easy querying
     '''
-    # because the dataset is so small it is significantly 
-    # easier to create a new database each time the data is updated
-    # then to only add the new rows
-    if os.path.isfile(database):
-        os.remove(database)
-
     conn = sqlite3.connect(database)
     curs = conn.cursor()
+    # because the dataset is so small it is significantly 
+    # easier to recreate the table each time the data is
+    # updated then to only add the new rows
+    curs.execute("DROP TABLE IF EXISTS tShooting;")
+    
     sql = """CREATE TABLE tShooting (id INTEGER PRIMARY KEY,
                                      name TEXT,
                                      date TEXT,
@@ -74,7 +73,7 @@ def load_shooting_db(path = 'data.csv', database = "shooting.db"):
     conn.close()
 
 
-def view_shooting_db_schema(database = "shooting.db"):
+def view_shooting_db_schema(database = "./data/shooting.db"):
     '''
     prints out database schema
     '''
@@ -93,7 +92,7 @@ def view_shooting_db_schema(database = "shooting.db"):
     conn.close()
 
 
-def view_tShooting(database = "shooting.db"):
+def view_tShooting(database = "./data/shooting.db"):
     '''
     prints first five rows of tShooting to help confirm everything was loaded correctly
     '''
@@ -105,8 +104,8 @@ def view_tShooting(database = "shooting.db"):
 
 def main():
 
-    path = "data.csv"
-    database = "shooting.db"
+    path = "./data/shooting.csv"
+    database = "./data/shooting.db"
 
     get_shooting_data(path)
     edit_features(path)
