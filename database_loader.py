@@ -43,30 +43,32 @@ def load_shooting_db(path = "./data/shooting.csv", database = "./data/shooting.d
     conn.close()
 
 
-def view_db_schema(database):
+def view_db_schema(database: str) -> None:
     '''
     prints out sqlite database schema
     '''
     conn = sqlite3.connect(database)
-    # list of all tables in the sqlite database
-    tables = pd.read_sql("""SELECT name 
-                            FROM sqlite_master
-                            WHERE type = 'table';""", conn).loc[:, "name"].values
+    # list of tables in the database
+    tables: list[str] = pd.read_sql("""SELECT name 
+                                       FROM sqlite_master
+                                       WHERE type = 'table';""", conn).loc[:, "name"].values
 
     for table in tables:
         print(table)
         print(pd.read_sql(f"""PRAGMA table_info({table});""", conn))
         print('\n')
+
     conn.close()
 
 
-def table_head(database, table):
+def table_head(database: str, table: str) -> None:
     '''
     print first five rows of a table to help confirm everything was loaded correctly
     '''
     conn = sqlite3.connect(database)
     print(pd.read_sql(f"""SELECT * FROM {table} LIMIT 5;""", conn))
     conn.close()
+
 
 if __name__ == "__main__":
 
