@@ -31,75 +31,7 @@ def edit_features(path = "./data/shooting.csv"):
     data.to_csv(path)
 
 
-def load_shooting_db(path = "./data/shooting.csv", database = "./data/shooting.db"):
-    '''
-    loads data in csv file into a relational database for easy querying
-    '''
-    conn = sqlite3.connect(database)
-    curs = conn.cursor()
-    # because the dataset is so small it is significantly 
-    # easier to recreate the table each time the data is
-    # updated then to only add the new rows
-    curs.execute("DROP TABLE IF EXISTS tShooting;")
-    
-    sql = """CREATE TABLE tShooting (id INTEGER PRIMARY KEY,
-                                     name TEXT,
-                                     date TEXT,
-                                     manner_of_death TEXT,
-                                     armed TEXT,
-                                     age INTEGER,
-                                     gender TEXT,
-                                     race TEXT,
-                                     city TEXT,
-                                     state TEXT,
-                                     signs_of_mental_illness TEXT,
-                                     threat_level TEXT,
-                                     flee TEXT,
-                                     body_camera TEXT,
-                                     longitude REAL,
-                                     latitude REAL,
-                                     is_geocoding_exact TEXT,
-                                     year INTEGER,
-                                     month INTEGER,
-                                     day INTEGER);"""
-    curs.execute(sql)
-    
-    data = pd.read_csv(path)
-    insert_row = "INSERT INTO tShooting VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);"
-    for row in data.values:
-        curs.execute(insert_row, tuple(row))
 
-    conn.commit()
-    conn.close()
-
-
-def view_shooting_db_schema(database = "./data/shooting.db"):
-    '''
-    prints out database schema
-    '''
-    conn = sqlite3.connect(database)
-    x = pd.read_sql(""" SELECT name 
-                        FROM sqlite_master
-                        WHERE type = 'table'
-                        AND name LIKE 't%';""", conn)
-    
-    for table in x.values:
-        sql = "PRAGMA table_info(" + table[0] + ");"
-        print(table)
-        print(pd.read_sql(sql, conn))
-        print('\n')
-
-    conn.close()
-
-
-def view_tShooting(database = "./data/shooting.db"):
-    '''
-    prints first five rows of tShooting to help confirm everything was loaded correctly
-    '''
-    conn = sqlite3.connect(database)
-    x = pd.read_sql(""" SELECT * FROM tShooting;""", conn)
-    print(x.head())
-    conn.close()
 
 
 def main():
@@ -109,9 +41,6 @@ def main():
 
     get_shooting_data(path)
     edit_features(path)
-    load_shooting_db(path, database)
-    view_shooting_db_schema(database)
-    view_tShooting(database)
 
 
 if __name__ == "__main__":
