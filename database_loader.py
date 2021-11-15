@@ -70,8 +70,12 @@ def table_head(database: str, table: str) -> None:
     conn.close()
 
 
-if __name__ == "__main__":
-
+def main():
     database = "./data/shooting.db"
     view_db_schema(database)
     table_head(database,  table = "tShooting")
+
+
+if __name__ == "__main__":
+    main()
+    
