@@ -8,5 +8,5 @@ Age 0 indicates any age below 1 <br>
 Age 86 to 99 may be topcoded <br>
 
 
-#### ./data/census_age.csv
+#### ./data/shooting.csv
 Source: https://github.com/washingtonpost/data-police-shootings
