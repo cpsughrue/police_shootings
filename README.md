@@ -1,5 +1,5 @@
-# fatal_force
-
+# police_shootings
+Code used for school research project on police shootings.
 
 #### ./data/census_age.csv
 Source: ACS 5-Year Estimates – Public Use Microdata Sample 2019 (Custom Table) <br>
