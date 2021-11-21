@@ -43,7 +43,7 @@ def get_age_data(path = "./data/census_age.csv"):
     
     API_KEY = "eed7905dcca3890bef8e1e203a30ce9f23d6a750"
     url = f"https://api.census.gov/data/2019/pep/charage?get=AGE,POP&SEX=0&for=us:1&key={API_KEY}"
-    data = json.loads(requests.get(url).text)
+    data: list[list[str]] = json.loads(requests.get(url).text)
 
     (pd.DataFrame(data[1:], columns = data[0]) # data[0] : ["AGE", "POP", "SEX", "us"]
        .drop(["SEX", "us"], axis = 1)
