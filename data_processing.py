@@ -40,7 +40,7 @@ def get_age_data(path = "./data/census_age.csv"):
     info on API response formate can be found in the Census Data API User Guide under Core Concepts.
     https://www.census.gov/data/developers/guidance/api-user-guide.Core_Concepts.html
     '''
-    
+
     API_KEY = "eed7905dcca3890bef8e1e203a30ce9f23d6a750"
     url = f"https://api.census.gov/data/2019/pep/charage?get=AGE,POP&SEX=0&for=us:1&key={API_KEY}"
     data: list[list[str]] = json.loads(requests.get(url).text)
@@ -64,4 +64,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    get_age_data()
