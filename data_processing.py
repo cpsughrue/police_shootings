@@ -48,6 +48,7 @@ def get_age_data(path = "./data/census_age.csv"):
     (pd.DataFrame(data[1:], columns = data[0]) # data[0] : ["AGE", "POP", "SEX", "us"]
        .drop(["SEX", "us"], axis = 1)
        .astype({"AGE" : int, "POP" : int})
+       .query("AGE != 999")
        .sort_values("AGE")
        .to_csv(path, index = False)
        )
@@ -58,9 +59,9 @@ def get_age_data(path = "./data/census_age.csv"):
 def main():
     get_shooting_data()
     edit_shooting_features()
-
-    # get_age_data()
+    get_age_data()
 
 
 if __name__ == "__main__":
-    main()
+    #main()
+    get_age_data()
