@@ -10,7 +10,7 @@ class WashingtonPostShootingData:
         self.PATH = PATH
 
 
-    def get_data(self) -> None:
+    def get_shooting_data(self) -> None:
         '''
         produces csv file "shooting.csv" with latest version of washington post database
         '''
@@ -71,31 +71,29 @@ class CensusData:
     def get_race_data(self, PATH: str = "./data/race.csv") -> None:
         '''
         save race populations from Census Data API.
-
         '''
 
-        url = f"https://api.census.gov/data/2019/pep/charagegroups?get=RACE,POP&for=us:1&key={self.API_KEY}"
+        url = f"https://api.census.gov/data/2019/pep/charage?get=RACE,POP,HISP&for=us:1&key={self.API_KEY}"
         data: list[list[str]] = json.loads(requests.get(url).text)
 
         (pd.DataFrame(data[1:], columns = data[0]) # data[0] : ["RACE", "POP", "NAME", "us"]
            .drop(["us"], axis = 1)
            .astype({"RACE" : int, "POP" : int})
-           .sort_values("RACE")
+           .sort_values(["HISP", "RACE"])
            .to_csv(PATH, index = False)
            )
 
-        print("Successfully saved population of race estimates")
+        print("Successfully saved race estimates")
 
 
 def main() -> None:
     w = WashingtonPostShootingData(PATH = "./data/shooting.csv")
-    w.get_data()
+    w.get_shooting_data()
     w.edit_features()
 
     c = CensusData(API_KEY = "eed7905dcca3890bef8e1e203a30ce9f23d6a750")
     c.get_age_data()
     c.get_race_data()
-
         
 
 if __name__ == "__main__":
