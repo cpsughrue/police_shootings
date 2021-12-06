@@ -30,3 +30,9 @@ Catagorical Info: https://api.census.gov/data/2019/pep/charage/variables/RACE.js
 
 #### ./data/shooting.csv
 Source: https://github.com/washingtonpost/data-police-shootings
+
+
+
+#### Visualizations
+
+<img src="./images/race.svg">
