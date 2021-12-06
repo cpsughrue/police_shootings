@@ -1,18 +1,19 @@
 # police_shootings
 Code used for school research project on police shootings.
 
+## Files
 
-#### ./data/age.csv
+### ./data/age.csv
 Year: Vintage 2019 <br>
 Population Estimate API: Demographic Characteristics Estimates by Single Year of Age and Sex <br>
 General Info: https://www.census.gov/data/developers/data-sets/popest-popproj/popest.html
 
 
-#### ./data/race.csv
+### ./data/race.csv
 Year: Vintage 2019 <br>
 Population Estimate API: Demographic Characteristics Estimates by Single Year of Age and Sex <br>
 General Info: https://www.census.gov/data/developers/data-sets/popest-popproj/popest.html <br>
-Catagorical Info: https://api.census.gov/data/2019/pep/charage/variables/RACE.json <br>
+RACE Catagorical Info: https://api.census.gov/data/2019/pep/charage/variables/RACE.json <br>
 
 - 0: All races
 - 1: White alone
@@ -28,13 +29,13 @@ Catagorical Info: https://api.census.gov/data/2019/pep/charage/variables/RACE.js
 - 11: Native Hawaiian and Other Pacific Islander alone or in combination
 
 
-#### ./data/shooting.csv
-Source: https://github.com/washingtonpost/data-police-shootings
+### ./data/shooting.csv
+Source: https://github.com/washingtonpost/data-police-shootings <br>
 
 
 
-#### Visualizations
+## Visualizations
 
 <p align = "center">
-<img src="race.svg">
+<img src="./images/race.svg">
 </p>
