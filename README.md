@@ -35,4 +35,6 @@ Source: https://github.com/washingtonpost/data-police-shootings
 
 #### Visualizations
 
-<img src="./images/race.svg">
+<p align = "center">
+<img src="race.svg">
+</p>
