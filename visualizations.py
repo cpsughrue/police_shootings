@@ -30,7 +30,8 @@ def comparePopulationsByAgeDistribution(WASHPOST_COLOR, CENSUS_COLOR) -> None:
     total_us_pop, us_age_dist = calculateAgeDistribution()
     washpost_age_dist = pd.read_csv("./data/washpost.csv").loc[:, "age"].dropna()
 
-    f, [ax_kde, ax_box] = plt.subplots(2, figsize = (10, 6), 
+    f, [ax_kde, ax_box] = plt.subplots(2, figsize = (10, 6),
+                                          linewidth = 1, 
                                           sharex = True, 
                                           gridspec_kw = {"height_ratios": (0.85, 0.15)})
 
@@ -151,7 +152,7 @@ def comparePopulationsByRace(WASHPOST_COLOR, CENSUS_COLOR):
 
     data = map.join(washpost_df, on = "washpost_key").join(census_df, on = "census_key")
 
-    plt.figure(figsize = (10, 5))
+    plt.figure(figsize = (10, 5), linewidth = 1)
 
     labels = data.loc[:, "lables_key"]
     x = np.linspace(0, 6, len(labels), dtype = int)
