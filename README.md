@@ -35,7 +35,6 @@ RACE Catagorical Info: https://api.census.gov/data/2019/pep/charage/variables/RA
 Source: https://github.com/washingtonpost/data-police-shootings
 
 <br>
-<br>
 
 ## Visualizations
 
@@ -45,7 +44,7 @@ Source: https://github.com/washingtonpost/data-police-shootings
 
 
 <br>
-<hr width = "75%" height = "1px">
+<hr align = "center" width = "75%" height = "1px">
 <br>
 <br>
 
