@@ -34,12 +34,13 @@ Source: https://github.com/washingtonpost/data-police-shootings <br>
 
 ## Visualizations
 
+<br>
+
 <p align="center">
 <img width="60%" src="./images/race.svg">
 </p>
 
 <br>
-<hr style="text-align:center;height:1px;color:grey;" width=70% >
 <br>
 
 <p align="center">

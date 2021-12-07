@@ -113,7 +113,7 @@ def comparePopulationsByAgeDistribution(WASHPOST_COLOR, CENSUS_COLOR) -> None:
                   frameon = False, 
                   bbox_to_anchor = (.485, 0.87))
 
-    plt.savefig("./images/age.svg", format = "svg", bbox_inches = "tight")
+    plt.savefig("./images/age.svg", format = "svg", bbox_inches = "tight", edgecolor = "black")
 
 
 def comparePopulationsByRace(WASHPOST_COLOR, CENSUS_COLOR):
@@ -193,7 +193,7 @@ def comparePopulationsByRace(WASHPOST_COLOR, CENSUS_COLOR):
     ax.get_yaxis().set_visible(False)
 
     # save figure
-    plt.savefig("./images/race.svg", format = "svg", bbox_inches = "tight")
+    plt.savefig("./images/race.svg", format = "svg", bbox_inches = "tight", edgecolor = "black")
 
 
 if __name__ == "__main__":
