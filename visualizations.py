@@ -148,7 +148,7 @@ def comparePopulationsByRace(WASHPOST_COLOR, CENSUS_COLOR):
                         'census_key'  : [ 1,       2,       4,      3 ]})
 
     washpost_df = pd.DataFrame(washpost / washpost.sum())
-    census_df   = pd.DataFrame(census / census.sum())
+    census_df = pd.DataFrame(census / census.sum())
 
     data = map.join(washpost_df, on = "washpost_key").join(census_df, on = "census_key")
 
