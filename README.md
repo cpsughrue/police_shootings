@@ -2,7 +2,7 @@
 
 Code used for school research project on police shootings.
 
-### Files
+## Files
 
 #### ./data/age.csv
 
@@ -37,21 +37,18 @@ Source: https://github.com/washingtonpost/data-police-shootings
 <br>
 <br>
 
-### Visualizations
+## Visualizations
 
-<br>
-<br>
-
-<p align="center">
-<img width="60%" src="./images/race.svg">
+<p align = "center">
+<img width = "60%" src = "./images/race.svg">
 </p>
 
 
 <br>
-<hr>
+<hr width = "75%" height = "1px">
 <br>
 <br>
 
-<p align="center">
-<img width="60%" src="./images/age.svg">
+<p align = "center">
+<img width = "60%" src = "./images/age.svg">
 </p>
