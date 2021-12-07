@@ -39,7 +39,7 @@ Source: https://github.com/washingtonpost/data-police-shootings <br>
 </p>
 
 <br>
-<hr align="center" style="color:grey;" width=70% height="1px">
+<hr style="text-align:center;height:1px;color:grey;" width=70% >
 <br>
 
 <p align="center">
