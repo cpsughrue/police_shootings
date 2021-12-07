@@ -100,7 +100,7 @@ def comparePopulationsByAgeDistribution(WASHPOST_COLOR, CENSUS_COLOR) -> None:
     #############################
 
     # add title
-    ax_kde.text(43, .035, "Comparing Age Distributions (Years)", fontsize = 18)
+    ax_kde.text(43, .03, "Comparing Age Distributions (Years)", fontsize = 18)
 
     # calculate and format size of each popuatlation
     census_total = '{:,}'.format(len(washpost_age_dist))
