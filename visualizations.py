@@ -100,7 +100,7 @@ def comparePopulationsByAgeDistribution(WASHPOST_COLOR, CENSUS_COLOR) -> None:
     #############################
 
     # add title
-    ax_kde.text(43, .03, "Comparing Age Distributions (Years)", fontsize = 16)
+    ax_kde.text(43, .035, "Comparing Age Distributions (Years)", fontsize = 18)
 
     # calculate and format size of each popuatlation
     census_total = '{:,}'.format(len(washpost_age_dist))
@@ -152,7 +152,7 @@ def comparePopulationsByRace(WASHPOST_COLOR, CENSUS_COLOR):
 
     data = map.join(washpost_df, on = "washpost_key").join(census_df, on = "census_key")
 
-    plt.figure(figsize = (10, 5), linewidth = 1)
+    plt.figure(figsize = (10, 6), linewidth = 1)
 
     labels = data.loc[:, "lables_key"]
     x = np.linspace(0, 6, len(labels), dtype = int)
