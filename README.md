@@ -44,7 +44,7 @@ Source: https://github.com/washingtonpost/data-police-shootings
 
 
 <br>
-<hr align = "center" width = "75%" height = "1px">
+<hr align="center" NOSHADE="noshade" width = "75%" height = "1px"></hr>
 <br>
 <br>
 
