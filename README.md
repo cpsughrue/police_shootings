@@ -44,5 +44,5 @@ RACE Catagorical Info: https://api.census.gov/data/2019/pep/charage/variables/RA
 - 10: Asian alone or in combination
 - 11: Native Hawaiian and Other Pacific Islander alone or in combination
 
-#### ./data/shooting.csv
+#### ./data/washpost.csv
 Source: https://github.com/washingtonpost/data-police-shootings <br>
