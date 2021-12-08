@@ -1,6 +1,23 @@
 # police_shootings
 On August 9th, 2014 Michael Brown was shot by a police officer in Ferguson, Missouri. The killing initiated protests across the country. As journalist documented the movement a Washington Post investigation found that the [FBI undercounted fatal police shootings by more than half](https://www.washingtonpost.com/news/post-nation/wp/2014/09/08/how-many-police-shootings-a-year-no-one-knows/). Inspired by the protests and the lack of accurate information, in 2015, the [Washington Post began tracking](https://www.washingtonpost.com/graphics/investigations/police-shootings-database/) every fatal shooting by an on-duty police officer. The Washington Post collects information on several demographic indicators, the circumstances of the shooting, and whether the person was experiencing a mental-health crisis by sourcing local news reports, law enforcement websites, law enforcement social media accounts, and by monitoring independent databases such as Killed by Police. This repository contains some of the code I wrote for a research project that used the Washington Post's Fatal Forces database.
 
+
+## Visualizations
+
+<br>
+
+<p align="center">
+<img width="60%" src="./images/age.svg">
+</p>
+
+<br>
+<br>
+
+<p align="center">
+<img width="60%" src="./images/race.svg">
+</p>
+
+
 ## Data
 
 #### ./data/age.csv
@@ -29,19 +46,3 @@ RACE Catagorical Info: https://api.census.gov/data/2019/pep/charage/variables/RA
 
 #### ./data/shooting.csv
 Source: https://github.com/washingtonpost/data-police-shootings <br>
-
-
-## Visualizations
-
-<br>
-
-<p align="center">
-<img width="60%" src="./images/age.svg">
-</p>
-
-<br>
-<br>
-
-<p align="center">
-<img width="60%" src="./images/race.svg">
-</p>
